@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Babushka</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="imgs/star_ikonArtboard%201.png" sizes="16x16" type="image/png">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        img {
+            border-radius: 10px;
+
+        }
+
+        .retter {
+            border-radius: 5%;
+            background-color: #ffffff;
+            border: solid;
+            border-color: #ffc082;
+            border-width: thin;
+            border-radius: 10px;
+
+
+
+
+
+
+        }
+
+        nav {
+            padding-top: 2px;
+            background-color: rgb(000, 000, 000, 0.4);
+            padding-bottom: 60px;
+            margin-top: 50px;
+
+
+
+        }
+
+        h2 {
+            padding-top: 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: underline;
+            border: solid;
+            border-color: #ffc082;
+            border-width: thin;
+            border-radius: 10px;
+            color: #ffc082;
+            font-weight: 100;
+            margin-left: 500px;
+            margin-right: 500px;
+            padding-bottom: 22px;
+            background-color: #ffffff;
+
+
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+
+        }
+
+
+
+        button {
+
+            border: solid;
+            border-width: thin;
+
+            background-color: rgb(255, 255, 255, 0.9);
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 00;
+            color: #ffc082;
+            transition: 0.3s;
+        }
+
+        button:hover {
+
+            color: #ea7e00;
+        }
+
+        body {
+            background-color: #f7f3f3;
+            
+
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: #ffc082;
+            font-size: 70px;
+            margin-top: 0px;
+            padding-top: 80px;
+            font-weight: 100;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        h4 {
+            font-family: 'Cinzel', serif;
+            color: #ffc082;
+            border-radius: 0%;
+            font-size: 20px;
+            margin-top: 50px;
+            /*     margin-left: 600px;
+            margin-right: 600px;
+            
+            background-color: rgb(255, 255, 255, 0.9);*/
+        }
+
+        p {
+            font-family: 'Cinzel', serif;
+            color: #ffc082;
+            font-size: 16px;
+            font-style: oblique;
+            padding-top: 60px;
+            padding-bottom: 40px;
+
+        }
+
+
+
+        /* header {
+            text-align: center;
+            background: url(imgs/mountain.jpg); 
+            background-size: cover;
+            
+            margin-top: -20px;
+            margin-left: -10px;
+            margin-right: -10px;
+        }*/
+
+        article {
+            padding: 1em;
+            background-color: white;
+        }
+
+        .data-container article img {
+            width: 100%;
+        }
+
+        .data-container {
+            margin: 0 auto;
+            display: grid;
+        }
+
+        header h2 {
+            text-transform: capitalize;
+
+        }
+
+        .menu-item {
+            border-radius: 5px;
+            background: #FFF;
+        }
+
+        .data-kortbeskrivelse {
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .data-pris {
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .checked {
+            color: #fdcd4c;
+        }
+
+        #parallax {
+
+            background-image: url("imgs/mountain.jpg");
+
+            text-align: center;
+            background: url(imgs/mountain.jpg);
+            background-size: cover;
+
+            margin-top: -10px;
+            margin-left: -8px;
+            margin-right: -8px;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+
+            /*min-height: 500px;
+
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-bottom: 20px;
+
+    z-index: -100;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;*/
+        }
+
+
+
+        #modal {
+            text-align: center;
+            height: 110%;
+
+            position: fixed;
+
+
+            opacity: 0;
+            pointer-events: none;
+            transition: 1s;
+            margin-left: -10px;
+            width: 101%;
+            background-color: rgba(0, 0, 0, 0.9);
+
+
+
+
+
+        }
+
+        #modal.vis {
+            pointer-events: all;
+            opacity: 1;
+
+            transition: 0.7s;
+        }
+
+        #modal-content {
+
+            text-align: center;
+
+            width: 100%;
+
+
+
+
+
+        }
+
+        .modal-navn {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+
+            color: #ffc082;
+        }
+
+        .modal_billede,
+        img {
+            width: 30%;
+        }
+
+
+
+        .modal_langBeskrivelse {
+            color: #ffffff;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 16px;
+
+            text-align: center;
+
+
+
+
+
+
+
+
+
+
+        }
+
+        .knap {
+            border: solid;
+            border-color: #ffffff;
+            background-color: transparent;
+            transition: 0.3s;
+
+
+        }
+
+        .knap:hover {
+            background-color: #ffffff;
+
+        }
+
+        .modal_pris {
+            font-size: 1.5em;
+            color: gray;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Open Sans Condensed', sans-serif;
+
+        }
+
+        .modal_kategori {
+
+
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+
+            color: #ffc082;
+        }
+
+        .modal_oprindelsesregion {
+            font-size: 1.5em;
+            color: gray;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+
+
+        .oprind_modal {
+            color: #ffffff;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 16px;
+
+        }
+
+        .pris_modal {
+            color: #ffffff;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 16px;
+
+        }
+        
+        footer {
+            text-align: center;
+          
+            
+            
+        }
+        
+       
+
+
+        @media screen and (min-width:580px) {
+            .data-container {
+                padding-left: 10%;
+                padding-right: 10%;
+                grid-gap: 5px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="modal">
+        <div id="modal-content">
+            <br><br><button class="knap">X</button><br><br>
+            <span class="modal_kategori"></span><br><br>
+            <img class="modal-billede" src="" alt="">
+            <h5 class="modal-navn"></h5>
+            <span class="modal_langBeskrivelse"></span><br> <br>
+            <span class="pris_modal">Pris:</span> <span class="modal_pris"></span ><br>><br> 
+            <span class="oprind_modal">Oprindelsesregion:</span>
+            <span class="modal_oprindelsesregion"></span>
+        </div>
+    </section>
+
+    <div id="parallax">
+        <header>
+            <div class="anmeld">
+                <h1>BABUSHKA </h1>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span> </div>
+
+
+
+            <p>"Creme de la Creme" <br><br> "Truly marvelous"</p>
+
+
+
+            <nav>
+                <h4>MENU</h4>
+                <button class="menu-item" data-kategori="alle">Alle</button>
+                <button class="menu-item" data-kategori="forretter">Forretter</button>
+                <button class="menu-item" data-kategori="hovedretter">Hovedretter</button>
+                <button class="menu-item" data-kategori="desserter">Desserter</button>
+                <button class="menu-item" data-kategori="drikkevarer">Drikkevarer</button>
+                <button class="menu-item" data-kategori="sideorders">Sideorders</button>
+
+            </nav>
+
+        </header>
+    </div>
+
+    <h2></h2>
+
+    <main class="container">
+        <section class="data-container"></section>
+    </main>
+    <template class="data-template">
+        <article class="retter">
+
+            <img src="" alt=""><br>
+            <h3></h3>
+            <span class="data-kortbeskrivelse"></span><br>
+            <span class="data-pris"></span><br>
+
+        </article>
+    </template>
+
+    <script>
+        let retter;
+        let dest = document.querySelector(".data-container");
+        document.addEventListener("DOMContentLoaded", hentJson);
+        madFilter = "alle";
+
+        document.querySelectorAll(".menu-item").forEach(knap => {
+            knap.addEventListener("click", filtrering)
+        });
+
+        function filtrering() {
+            dest.textContent = "";
+            madFilter = this.getAttribute("data-kategori");
+            visRetter();
+        }
+
+
+
+        async function hentJson() {
+            let myJson = await fetch("menu.json");
+            retter = await myJson.json();
+            visRetter();
+        }
+
+        function visRetter() {
+            let temp = document.querySelector(".data-template");
+            document.querySelector("h2").textContent = madFilter;
+            //løb personlisten igennem og lav en klon
+            retter.forEach(retter => {
+                if (retter.kategori == madFilter || madFilter == "alle") {
+
+
+                    let klon = temp.cloneNode(true).content;
+                    //indsæt data i klonen
+
+                    klon.querySelector("img").src = "imgs/small/" + retter.billede + "-sm.jpg";
+                    klon.querySelector("h3").textContent = retter.navn;
+                    klon.querySelector(".data-kortbeskrivelse").textContent = retter.kortbeskrivelse;
+                    klon.querySelector(".data-pris").textContent = "Pris: " + retter.pris + ",-";
+                    klon.querySelector("img").addEventListener("click", () => {
+                    visModal(retter);
+                    })
+                     //placer klon i DOM
+                    dest.appendChild(klon);
+                }
+            })
+        }
+            function visModal(retter) {
+            modal.classList.add("vis");
+            modal.querySelector(".modal-navn").textContent = retter.navn;
+            modal.querySelector(".modal-billede").src = "imgs/large/" + retter.billede + ".jpg";
+            modal.querySelector(".modal-billede").alt = "Foto af " + retter.billede;
+            modal.querySelector(".modal_kategori").textContent = retter.kategori;
+            modal.querySelector(".modal_langBeskrivelse").textContent = retter.langbeskrivelse;
+            modal.querySelector(".modal_pris").textContent = retter.pris;
+            modal.querySelector(".modal_oprindelsesregion").textContent = retter.oprindelsesregion;
+            modal.querySelector("button").addEventListener("click", skjulModal);
+        }
+
+        function skjulModal() {
+            document.querySelector("#modal").classList.remove("vis");
+        }
+        
+        
+    </script>
+    
+    <footer> <p clas=kontakt>Adresse: Strandvejen 267, 2920 Charlottenlund <br> Åbningstid: hverdage	12–00 lørdag 12-01 søndag 12-23</p>
+
+
+</footer>
+</body>
+
+</html>
